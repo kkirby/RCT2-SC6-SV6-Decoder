@@ -15,15 +15,15 @@ class CChunkReader {
 			};
 		};
 		
-		class SByteArrayContainer {
+		class CByteArrayContainer {
 			public:
 				byteArray bytes;
 				size_t length;
-				SByteArrayContainer(byteArray bytes, size_t length){
+				CByteArrayContainer(byteArray bytes, size_t length){
 					this->bytes = bytes;
 					this->length = length;
 				}
-				~SByteArrayContainer(){
+				~CByteArrayContainer(){
 					delete[] this->bytes;
 				}
 		};
@@ -31,7 +31,7 @@ class CChunkReader {
 		CChunkReader(const CReader * fileReader);
 		~CChunkReader();
 		
-		SByteArrayContainer * readChunk() throw (CReadException);
+		CByteArrayContainer * readChunk() throw (CReadException);
 		
 		static void rotateBitsRight(byte & value, unsigned int rotationCount);
 		static void rleDecode(byteArray & bytes, size_t & length);

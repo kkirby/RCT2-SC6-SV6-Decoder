@@ -8,7 +8,7 @@ CChunkReader::~CChunkReader(){
 	
 }
 
-CChunkReader::SByteArrayContainer * CChunkReader::readChunk() throw(CReadException) {
+CChunkReader::CByteArrayContainer * CChunkReader::readChunk() throw(CReadException) {
 	size_t chunkLength = 0;
 	byteArray buffer = this->_fileReader->read(1);
 	ChunkEncoding::Type chunkType = (ChunkEncoding::Type)buffer[0];
@@ -43,7 +43,7 @@ CChunkReader::SByteArrayContainer * CChunkReader::readChunk() throw(CReadExcepti
 			chunkLength
 		);
 	}
-	SByteArrayContainer * returnContainer = new SByteArrayContainer(buffer,chunkLength);
+	CByteArrayContainer * returnContainer = new CByteArrayContainer(buffer,chunkLength);
 	return returnContainer;
 }
 

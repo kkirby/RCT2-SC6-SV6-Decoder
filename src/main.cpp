@@ -10,7 +10,7 @@ void printByteArray(byteArray input,size_t length){
 int main(){
 	CReader myReader("/Users/kkirby/Downloads/Rct_08__Katies_Dreamland.SC6");
 	CChunkReader myChunkReader(&myReader);
-	CChunkReader::SByteArrayContainer * myBytes = myChunkReader.readChunk();
+	CChunkReader::CByteArrayContainer * myBytes = myChunkReader.readChunk();
 	free(myBytes);
 	myBytes = myChunkReader.readChunk();
 	free(myBytes);
