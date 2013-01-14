@@ -1,0 +1,15 @@
+#!/bin/bash
+rm rct2Decoder
+echo "Building ..."
+g++ -o rct2Decoder \
+	src/main.cpp src/reader/reader.cpp src/reader/exception/readException.cpp \
+	src/chunkReader/chunkReader.cpp
+echo "Built"
+chmod +x rct2Decoder
+if [ "$1" = "run" ]; then
+	echo "Running"
+	echo ""
+	./rct2Decoder
+	echo ""
+	echo "Ran"
+fi
